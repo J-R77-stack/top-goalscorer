@@ -12,8 +12,8 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('top_goalscorer')
 
-goals1 = SHEET.worksheet('goals1')
+goals = SHEET.worksheet('goals')
 
-data = goals1.get_all_values()
+data = goals.get_all_values()
 
 print(data)

@@ -12,8 +12,16 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('top_goalscorer')
 
-goals = SHEET.worksheet('goals')
+def get_goalscorer_data():
+    """
+    Get goal scorer cell info from user
+    """
+    print("Please enter cell and row number from goalscorer sheet.")
+    print("Data should be in this fomat")
+    print("Example: a1,a3\n")
 
-data = goals.get_all_values()
+    data_str = input("Enter your cell data here:")
+    print(f"The data provided is {data_str}")
 
-print(data)
+get_goalscorer_data()    
+

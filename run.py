@@ -25,11 +25,11 @@ def play_game():
   display_board() 
 
   while game_still_going:
-
+  # handle a single turn of an abitary player
       handle_turn(current_player) 
-
+  # check the game has ended
       check_if_game_over()
-
+  # flip to other played 
       flip_player()
 
   # The game has ended

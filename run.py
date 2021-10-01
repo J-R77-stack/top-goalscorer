@@ -33,6 +33,12 @@ def play_game():
       flip_player()
 
   # The game has ended
+  if winner == "X" or winner == "O":
+    print(winner + "won.")
+  elif winner == None:
+    print("Tie")
+  
+
   
 def handle_turn(player):
   position = input("choose a position from 1-9: ")

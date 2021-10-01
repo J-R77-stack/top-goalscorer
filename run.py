@@ -14,14 +14,13 @@ SHEET = GSPREAD_CLIENT.open('top_goalscorer')
 
 def get_goalscorer_data():
     """
-    Get goal scorer cell info from user
+    Get goal scorer row number from user
     """
-    print("Please enter cell and row number from goalscorer sheet.")
-    print("Data should be in this fomat")
-    print("Example: a1,a3\n")
+    print("Please enter row number from goalscorer sheet.")
+    print("Data should be a number between 2 to 140")
+    print("Example: 2, 10, 41 etc\n")
 
     data_str = input("Enter your cell data here:")
     print(f"The data provided is {data_str}")
 
-get_goalscorer_data()    
-
+get_goalscorer_data()      

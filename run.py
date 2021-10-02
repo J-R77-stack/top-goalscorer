@@ -38,11 +38,11 @@ def play_game():
     to then change the player and check to see if game is over.
     """
 
-   game_turn(current_player)
+    game_turn(current_player)
 
-   see_if_game_over()
+    see_if_game_over()
 
-   change_player()
+    change_player()
 
    if winner == "X" or winner == "O":
      print(winner + "is the winner.")
@@ -54,9 +54,7 @@ def game_turn(player):
   place = int(place) - 1
 
   board[place] = "X"
-  show_board()
-
-
+ 
 def see_if_game_over():
   """
   Fuction to see if game is over by a win or a draw
@@ -64,11 +62,32 @@ def see_if_game_over():
   see_if_winner()
   see_if_draw()
 
-def see_if_winner():  
+def see_if_winner():
 
-#def see_if_draw():
+  row_winner = check_rows()
 
-#def change_player():  
+  column_winner = check_columns()
+
+  diagonal_winner = check_diagonals()
+  if row_winner:
+    # There was a win
+  elif column_winner:
+    # There was a win
+  elif diagonal_winner:
+    # There was a win 
+  else:
+    # No win  
+  return  
+
+def check_rows():
+  return
+  
+
+def see_if_draw():
+  return
+
+def change_player(): 
+  return 
   """
   Fuction to change the player from X to O and inform the user whose turn it is
   """  

@@ -1,81 +1,76 @@
-# ---- Global Variables
+#------------ Global variables-------------
 
-# Game board
-board = ["-","-","-",
-         "-","-","-",
-         "-","-","-",]
+# Variable containing a list to hold the board game data.
+board = ["1", "2", "3",
+         "4", "5", "6",
+         "7", "8", "9"]
 
-# If game is still going
-game_still_going = True
+# Variable to inform the users if the game is finished yet.
+game_still_running = True        
 
-# Who won? Or tie?
+# Variable to1
+# inform the users who the winner is.
 winner = None
 
-# Whos turn is it
+# Variable to inform the users whose go it is, starts with player X.
 current_player = "X"
 
-def display_board():
+
+def show_board():
+  """
+  Function to print the game board to the screen in every round
+  """
+  print("\n")
+  print(" Welcome to Noughts and Crosses")
+  print("\n")
   print(" | " + board[0] + " | " + board[1] + " | " + board[2]+ " | ")
   print(" | " + board[3] + " | " + board[4] + " | " + board[5]+ " | ")
   print(" | " + board[6] + " | " + board[7] + " | " + board[8]+ " | ")
+  print("\n")
 
-def play_game():
-  
-  # Display initial board
-  display_board() 
+def play_game(): 
 
-  while game_still_going:
-  # handle a single turn of an abitary player
-      handle_turn(current_player) 
-  # check the game has ended
-      check_if_game_over()
-  # flip to other played 
-      flip_player()
+   show_board()
 
-  # The game has ended
-  if winner == "X" or winner == "O":
-    print(winner + "won.")
-  elif winner == None:
-    print("Tie")
-  
+   while game_still_running:
+    """
+    While loop to loop through which players turn it is and 
+    to then change the player and check to see if game is over.
+    """
 
-  
-def handle_turn(player):
-  position = input("choose a position from 1-9: ")
-  position = int(position) - 1
+   game_turn(current_player)
 
-  board[position] = "X"
-  display_board()
+   see_if_game_over()
 
+   change_player()
 
+   if winner == "X" or winner == "O":
+     print(winner + "is the winner.")
+   elif winner == None:
+     print("Its a Draw")  
 
-def check_if_game_over():
-    check_if_win()
-    check_if_tie()
+def game_turn(player):
+  place = input("Please select a number from 1 to 9:")
+  place = int(place) - 1
 
-def check_if_win():
-    # check rows
-    # check colums
-    # check diagonals
-    return
-
-def check_if_tie():
-    return
-
-def flip_player():
-    return
-
-play_game()       
+  board[place] = "X"
+  show_board()
 
 
-# board
-# display
-# play game
-# handle turn
-# check win
-  # check rows
-  # check columns
-  # check diagonals
-# check tie
-# flip player  
+def see_if_game_over():
+  """
+  Fuction to see if game is over by a win or a draw
+  """
+  see_if_winner()
+  see_if_draw()
 
+def see_if_winner():  
+
+#def see_if_draw():
+
+#def change_player():  
+  """
+  Fuction to change the player from X to O and inform the user whose turn it is
+  """  
+
+play_game()
